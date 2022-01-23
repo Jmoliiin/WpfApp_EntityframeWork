@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="inl_wpf_enf.Views.UpdateErrandsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:inl_wpf_enf.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Update errend" Margin="120 5 0 20" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+        <StackPanel Grid.Row="1" Margin=" 120,0,120,10" >
+            <Label Content="Select errend to update"  FontSize="15" FontWeight="DemiBold"  HorizontalAlignment="Stretch"/>
+            <ComboBox x:Name="cbErrand" Padding="5" Margin="0,3,0,10"/>
+            <Label Content="Update selected errend" FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Stretch"/>
+            <Label Content="Update description:" />
+            <TextBox x:Name="tbDescription" TextWrapping="Wrap" Padding="5" Margin="0 2 0 10" Height="60" Width="auto" />
+            <Label Content="Update status:" />
+            <ComboBox x:Name="cbStatus" Padding="5" Margin="0 2 0 10" />
+            <Button x:Name="btnAdd" FontSize="14" Margin="0 30 0 0" Content="Update Errend" Padding="0 10" Click="btnAdd_Click"/>
+            <Label x:Name="lbError" Foreground="DarkRed" FontSize="14" Margin="20" HorizontalAlignment="Center" />
+
+
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

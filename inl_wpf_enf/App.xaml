@@ -1,0 +1,36 @@
+﻿<Application x:Class="inl_wpf_enf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:inl_wpf_enf"
+             xmlns:view="clr-namespace:inl_wpf_enf.Views"
+             xmlns:viewModel="clr-namespace:inl_wpf_enf.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/MenuItemTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <DataTemplate DataType="{x:Type viewModel:CostumerViewModel}">
+                <view:CostumerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:NewCostumerViewModel}">
+                <view:NewCostumerView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ErrandViewModel}">
+                <view:ErrandsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:NewErrendViewModel}">
+                <view:NewErrandsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateErrandViewModel}">
+                <view:UpdateErrandsView/>
+            </DataTemplate>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
