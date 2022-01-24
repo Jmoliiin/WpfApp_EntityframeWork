@@ -23,9 +23,6 @@ namespace inl_wpf_enf.Views
     public partial class NewCostumerView : UserControl
     {
         private readonly ICostumerService costumerService = new CostumerServices();
-        private readonly IAdminsService adminsService = new AdminsService();
-        private readonly IErrandsService errandsService = new ErrandsService();
-        private readonly IStatusService statusService = new StatusService();
         public NewCostumerView()
         {
             
@@ -41,7 +38,7 @@ namespace inl_wpf_enf.Views
                 if (costumerService.Create(tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbMobileNumber.Text, tbStreetName.Text, tbPostalCode.Text, tbCity.Text, tbCountry.Text))
                     ClearFields();
                 else
-                    lbError.Content = "A user with the same email address already exists.";
+                    lbError.Content = "A costumer with the same email address already exists.";
             }
         }
         private void ClearFields()

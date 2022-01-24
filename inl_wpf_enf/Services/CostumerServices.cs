@@ -20,7 +20,7 @@ namespace inl_wpf_enf.Services
         public bool Create(string firstname, string lastname, string email, string mobilenumber, string streetName, string postalCode,string city,string country)
         {
 
-            //ko9lla om användaren finns
+            //kolla om användaren finns
             var _user = _context.Costumers.Where(x => x.Email == email).FirstOrDefault();
             //om den är null och inte finns
             if (_user == null)
@@ -45,7 +45,6 @@ namespace inl_wpf_enf.Services
         }
         public IEnumerable<Costumer> GetAll()
         {
-            //returnera lista på alla user och adress??????
             return _context.Costumers.Include(x => x.Address).ToList(); 
         }
     }

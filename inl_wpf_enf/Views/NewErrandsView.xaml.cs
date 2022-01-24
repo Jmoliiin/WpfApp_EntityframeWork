@@ -43,8 +43,6 @@ namespace inl_wpf_enf.Views
             PopulateStatus();
         }
 
-        
-
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(tbHeader.Text) && !string.IsNullOrEmpty(tbDescription.Text))
@@ -60,16 +58,6 @@ namespace inl_wpf_enf.Views
                     lbError.Content = "Could not create a errend, Costumer not found in the system";
             }
         }
-        //private void btnAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(tbHeaderName.Text) && !string.IsNullOrEmpty(tbDescriptionName.Text) && !string.IsNullOrEmpty(tbFirstName.Text) && !string.IsNullOrEmpty(tbLastName.Text))
-        //    {
-        //        if (ErrandsService.Create(tbHeader.Text, tbDescription.Text, (int)cbStatus.SelectedValue, (int)cbAdmin.SelectedValue),(int)cbCostumer.SelectedValue)
-        //            ClearFields();
-        //        else
-        //            lbError.Content = "Could not create a errend, Costumer not found in the system";
-        //    }
-        //}
         private void ClearFields()
         {
             tbHeader.Text = "";

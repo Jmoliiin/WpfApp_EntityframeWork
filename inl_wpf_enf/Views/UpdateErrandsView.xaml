@@ -24,8 +24,6 @@
             <ComboBox x:Name="cbStatus" Padding="5" Margin="0 2 0 10" />
             <Button x:Name="btnAdd" FontSize="14" Margin="0 30 0 0" Content="Update Errend" Padding="0 10" Click="btnAdd_Click"/>
             <Label x:Name="lbError" Foreground="DarkRed" FontSize="14" Margin="20" HorizontalAlignment="Center" />
-
-
         </StackPanel>
         
     </Grid>

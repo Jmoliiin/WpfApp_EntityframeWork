@@ -13,6 +13,7 @@ namespace inl_wpf_enf.Services
     internal interface IErrandsService
     {
         bool Create( string heading,string description, int statusId, int adminId,int CostumerId);
+        bool Update(string description, int statusId, int costumerId);
         void Save();
         IEnumerable<Errand> GetAll();
     }
@@ -41,6 +42,26 @@ namespace inl_wpf_enf.Services
         public void Save()
         {            
             _context.SaveChanges();            
+        }
+
+        
+        public bool Update(string description, int statusId, int errendId)
+        {
+            var _errend = _context.Errands.Where(x => x.Id == errendId).FirstOrDefault();
+            
+            if(_errend != null)
+            {
+                if (description != string.Empty)
+                    _errend.Descriptions = description;
+                if (statusId != 0)
+                    _errend.SatusId = statusId;
+                _errend.DateChanged = DateTime.Now;
+                _context.Update(_errend);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+            
         }
     }
 }
